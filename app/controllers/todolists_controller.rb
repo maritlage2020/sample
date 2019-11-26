@@ -9,6 +9,9 @@ class TodolistsController < ApplicationController
   	list.save
   	redirect_to '/top'
   end
+  def index
+    @lists = List.all
+  end
 
   private
   def list_params
