@@ -27,6 +27,11 @@ class TodolistsController < ApplicationController
     list.update(list_params)
     redirect_to todolist_path(list.id)
   end
+  def destory
+    list = List.find(params[:id])
+    list.destory
+    redirect_to todolists_path
+  end
 #この辺からわからない
   private
   def list_params
